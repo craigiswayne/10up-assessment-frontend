@@ -1,0 +1,24 @@
+{
+  "name": "10up.io",
+  "version": "1.0.0",
+  "description": "10Up Front End Assessment",
+  "scripts": {
+    "compile:css": "npm run compile:css:dev -- --source-comments=false --output-style=compressed",
+    "compile:css:dev": "node-sass src/styles -o dist/styles --source-map=true --error-bell",
+    "compile:ts": "tsc src/scripts/*.ts --outDir dist/scripts/",
+    "uglify:js": "uglifyjs --compress --mangle -o dist/scripts/scripts.min.js -- dist/scripts/menu.js dist/scripts/lazy-load-images.js",
+    "compile:js": "npm run compile:ts && npm run uglify:js",
+    "lint:css": "stylelint src/styles/*.scss",
+    "watch:css": "npm run compile:css:dev -- --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "bootstrap": "^5.0.2",
+    "node-sass": "^6.0.1",
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^22.0.0",
+    "typescript": "^4.3.5",
+    "uglify-js": "^3.14.1"
+  }
+}

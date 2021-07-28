@@ -1,0 +1,138 @@
+@import 'sass-variables';
+@import 'node_modules/bootstrap/scss/bootstrap';
+@import 'animations';
+@import 'fonts-complimentary';
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+h2 {
+  font-size: 2rem;
+  font-family: var(--font-family-heading);
+  font-weight: bold;
+
+  @media (min-width: $breakpoint-md) {
+    font-size: 3rem;
+  }
+}
+
+p {
+  line-height: 2.2rem;
+}
+
+a {
+  &:hover,
+  &:focus {
+    outline: none;
+
+    &::after {
+      @include animation(width-grow-from-left, 0.5s, ease, forwards);
+    }
+  }
+}
+
+.text-secondary {
+  color: var(--text-color-secondary);
+}
+
+#menu-toggle {
+  cursor: pointer;
+}
+
+/**
+Took this out since the page jumps around, which is horrible
+ */
+//body.menu {
+//  overflow: hidden;
+//}
+
+#site-menu {
+  --site-menu-top: 0;
+  --site-menu-right: 0;
+  --site-menu-width: 100%;
+  --site-menu-height: 100%;
+
+  position: fixed;
+  top: var(--site-menu-top);
+  right: var(--site-menu-right);
+  width: var(--site-menu-width);
+  height: var(--site-menu-height);
+  max-width: 100%;
+  max-height: 100%;
+  overflow: auto;
+
+  @media (min-width: $breakpoint-mobile-m) {
+    --site-menu-top: var(--font-size-content);
+    --site-menu-right: var(--font-size-content);
+    --site-menu-width: auto;
+    --site-menu-height: auto;
+  }
+
+  background-color: #010203;
+  font-size: 28px;
+  color: white;
+  z-index: 1;
+  padding: 2.5rem 0 0 0;
+  display: none;
+
+  &.show {
+    display: block;
+  }
+
+  .mask {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    top: 0;
+    left: 0;
+  }
+
+  .container-fluid {
+    position: relative;
+    z-index: 100;
+  }
+
+  ul {
+    padding: 0;
+    margin: 1.5rem 0;
+    list-style: none;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    padding: 1.75rem 4rem 1.75rem 2rem;
+    display: block;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+  }
+
+  #menu-close {
+    margin-right: 1.5rem;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+  }
+}
+
+#section-second {
+  min-height: 93vh;
+}
+
+#section-last {
+  min-height: 57vh;
+  background: -webkit-linear-gradient(left, transparent 5%, #151a26 80%), url("../images/compressed/Phone.jpeg") -250px 0;
+  background: -moz-linear-gradient(left, transparent 5%, #151a26 80%), url("../images/compressed/Phone.jpeg") -250px 0;
+  background: linear-gradient(to right, transparent 5%, #151a26 80%), url("../images/compressed/Phone.jpeg") -250px 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#footer {
+  background-color: var(--background-dark);
+}

@@ -1,0 +1,14 @@
+@import './sass-variables';
+
+:root {
+  --font-family-fallback: monospace;
+  --font-family-accent: 'Cousine', var(--font-family-fallback);
+  --font-family-heading: 'Montserrat', var(--font-family-fallback);
+  --font-family-content: var(--font-family-heading);
+  --font-size-content: 20px;
+  --text-color-primary: #17cf97;
+  --text-color-secondary: #0262f0;
+  --background-dark: #010203;
+  --hero-gradient-color-start: #091523;
+  --hero-gradient-color-end: #0e253f;
+}
